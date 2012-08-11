@@ -36,12 +36,12 @@ PageStackWindow {
 
             currentTab: zeeTab1
 
-            ZeeConnectPage{
+            ZeeConnectPage {
                 id: zeeTab1
                 name: "Zee_1"
             }
 
-            ZeeConnectPage{
+            ZeeConnectPage {
                 id: zeeTab2
                 name: "Zee_2"
                 usedAddresses: zeeTab1.currentAddress
@@ -59,13 +59,13 @@ PageStackWindow {
             id: tabButtonRow
             style: TabButtonStyle {}
 
-            TabButton{
+            TabButton {
                 text: zeeTab1.connected ? "*Zee 1*" : "Zee 1"
                 tab: zeeTab1
 
             }
 
-            TabButton{
+            TabButton {
                 text: zeeTab2.connected ? "*Zee 2*" : "Zee 2"
                 tab: zeeTab2
                 enabled: zeeTab1.currentAddress !== "No Zeemote found yet."
@@ -96,11 +96,11 @@ PageStackWindow {
         }
     }
 
-    AboutDialog{
+    AboutDialog {
         id: aboutDialog
     }
 
-    KeyBindingSettings{
+    KeyBindingSettings {
         id: keyBindingsSettings
         onAccepted: tabGroup.currentTab.loadKeyBindings()
     }

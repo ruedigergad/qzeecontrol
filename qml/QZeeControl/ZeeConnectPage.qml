@@ -43,13 +43,13 @@ Page {
 
         var address = SettingsStorage.getSetting(name + "address");
         var port = SettingsStorage.getSetting(name + "port");
-        if(address !== "Unknown" && port !== "Unknown"){
+        if(address !== "Unknown" && port !== "Unknown") {
             console.log("Loaded address " + address + " and port " + port + " from DB for " + name + ".")
             addressField.text = address
             portField.text = port
         }
 
-        if(SettingsStorage.getSetting(name + "A") === "Unknown"){
+        if(SettingsStorage.getSetting(name + "A") === "Unknown") {
             console.log("Initializing key bindings for " + name + ".")
             setKeyBindingsToDefault()
         }
@@ -59,7 +59,7 @@ Page {
         initializing = false
     }
 
-    function setKeyBindingsToDefault(){
+    function setKeyBindingsToDefault() {
         console.log("Setting key bindings to default for " + name + ".")
         SettingsStorage.setSetting(name + "A", "a")
         SettingsStorage.setSetting(name + "B", "b")
@@ -81,7 +81,7 @@ Page {
         SettingsStorage.setSetting(name + "AlternateActionTrigger", "none")
     }
 
-    function loadKeyBindings(){
+    function loadKeyBindings() {
         console.log("Loading key bindings for " + name + ".")
         zeeRemoteControl.keyBindingA = SettingsStorage.getSetting(name + "A")
         zeeRemoteControl.keyBindingB = SettingsStorage.getSetting(name + "B")
@@ -96,8 +96,8 @@ Page {
         zeeRemoteControl.threshold = SettingsStorage.getSetting(name + "Threshold")
     }
 
-    function updateConnectAndScanButton(){
-        if(!deviceInfo.currentBluetoothPowerState){
+    function updateConnectAndScanButton() {
+        if(!deviceInfo.currentBluetoothPowerState) {
             scanButton.enabled = false
             connectButton.enabled = false
 
@@ -174,9 +174,9 @@ Page {
         target: platformWindow
 
         onActiveChanged: {
-            if(platformWindow.active){
+            if(platformWindow.active) {
                 state = "active"
-            }else{
+            } else {
                 state = "inactive"
             }
         }
@@ -207,15 +207,26 @@ Page {
     }
 
     Flickable {
-        anchors{top: headerItem.bottom; bottom: parent.bottom; left: parent.left; right: parent.right}
+        anchors {
+            top: headerItem.bottom
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+        }
+
         contentHeight: contentColumn.height
 
-        Column{
+        Column {
             id: contentColumn
             spacing: 10
-            anchors{top: parent.top; left: parent.left; right: parent.right; topMargin: 10}
+            anchors {
+                top: parent.top
+                left: parent.left
+                right: parent.right
+                topMargin: 10
+            }
 
-            Button{
+            Button {
                 id: scanButton
                 enabled: false
 
@@ -227,12 +238,12 @@ Page {
                 }
             }
 
-            Row{
+            Row {
                 id: addressRow
                 anchors.horizontalCenter: parent.horizontalCenter
                 spacing: 5
 
-                TextField{
+                TextField {
                     id: addressField
                     text: "No Zeemote found yet."
                     width: 280
@@ -255,7 +266,7 @@ Page {
                         SettingsStorage.setSetting(name + "address", text)
                     }
                 }
-                TextField{
+                TextField {
                     id: portField
                     text: "na"
                     width: 60
@@ -282,7 +293,7 @@ Page {
                 wrapMode: Text.WordWrap
             }
 
-            Button{
+            Button {
                 id: connectButton
                 anchors.horizontalCenter: parent.horizontalCenter
                 enabled: false
@@ -301,7 +312,7 @@ Page {
                 }
             }
 
-            Button{
+            Button {
                 id: disconnectButton
                 anchors.horizontalCenter: parent.horizontalCenter
 
@@ -313,41 +324,41 @@ Page {
                 }
             }
 
-            Row{
+            Row {
                 id: buttonRow
                 anchors.horizontalCenter: parent.horizontalCenter
 
                 spacing: 20
 
-                Label{
+                Label {
                     id: labelA
                     text: "A"
                     color: zeeRemoteControl.a ? "red" : "blue"
                 }
-                Label{
+                Label {
                     id: labelB
                     text: "B"
                     color: zeeRemoteControl.b ? "red" : "blue"
                 }
-                Label{
+                Label {
                     id: labelC
                     text: "C"
                     color: zeeRemoteControl.c ? "red" : "blue"
                 }
-                Label{
+                Label {
                     id: labelD
                     text: "D"
                     color: zeeRemoteControl.d ? "red" : "blue"
                 }
             }
 
-            Item{
+            Item {
                 id: testArea
                 anchors.horizontalCenter: parent.horizontalCenter
                 height: moveArea.height
                 width: moveArea.width
 
-                Rectangle{
+                Rectangle {
                     id: moveArea
                     color: "gray"
 
@@ -355,7 +366,7 @@ Page {
                     height: 256
                 }
 
-                Rectangle{
+                Rectangle {
                     id: cursorRectangle
                     width: 10
                     height: 10
@@ -368,7 +379,7 @@ Page {
         }
     }
 
-    DeviceInfo{
+    DeviceInfo {
         id: deviceInfo
 
         monitorBluetoothStateChanges: true
@@ -378,7 +389,7 @@ Page {
         }
     }
 
-    BluetoothDiscoveryModel{
+    BluetoothDiscoveryModel {
         id: btDiscovery
 
         discovery: false
@@ -388,20 +399,20 @@ Page {
             if(initializing)
                 return
 
-            if(discovery){
+            if(discovery) {
                 infoText.text = "Scanning for a Zeemote..."
                 scanButton.enabled = false
                 connectButton.enabled = false
                 disconnectButton.enabled = false
                 addressField.enabled = false
                 portField.enabled = false
-            }else{
+            } else {
                 scanButton.enabled = true
                 disconnectButton.enabled = false
                 addressField.enabled = true
                 portField.enabled = true
 
-                if(addressField.text !== "No Zeemote found yet." && portField.text !== "na"){
+                if(addressField.text !== "No Zeemote found yet." && portField.text !== "na") {
                     infoText.text = "Zeemote found. To enable remote control please press \"Connect\" when ready."
                     connectButton.enabled = true
                 }
@@ -416,7 +427,7 @@ Page {
             if(service.serviceName !== "Zeemote")
                 return
 
-            if(service.deviceAddress === usedAddresses){
+            if(service.deviceAddress === usedAddresses) {
                 console.log("Zeemote at address " + service.deviceAddress + " already in use somewhere else. " +
                             "Not going to use this one.")
                 return
@@ -429,7 +440,7 @@ Page {
         }
     }
 
-    ZeeRemoteControl{
+    ZeeRemoteControl {
         id: zeeRemoteControl
 
         onConnected: {
@@ -448,7 +459,7 @@ Page {
         }
     }
 
-    XtstAdapter{
+    XtstAdapter {
         id: xtstAdapter
     }
 }
