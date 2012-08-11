@@ -25,6 +25,4 @@ Page {
     tools: commonTools
 
     orientationLock: PageOrientation.LockPortrait
-
-
 }

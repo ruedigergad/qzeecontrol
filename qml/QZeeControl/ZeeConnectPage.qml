@@ -182,33 +182,28 @@ Page {
         }
     }
 
-    Item {
-        id: headerItem
-        anchors{top: parent.top; left: parent.left; right: parent.right}
-        height: header.height
-        z: 1
+    Rectangle {
+        id: header
+        height: 72
+        color: "#0c61a8"
+        anchors{left: parent.left; right: parent.right; top: parent.top}
 
-        Image {
-            id: header
-            height: 72
-            source: "image://theme/color8-meegotouch-view-header-fixed"
-            anchors.fill: parent
-
-            Text {
-                text: "QZeeControl"
-                color: "white"
-                font.family: "Nokia Pure Text Light"
-                font.pixelSize: 32
-                anchors.left: parent.left
-                anchors.leftMargin: 20
-                anchors.verticalCenter: parent.verticalCenter
-            }
+        Text {
+            text: "QZeeControl"
+            color: "white"
+            font.family: "Nokia Pure Text Light"
+            font.pixelSize: 32
+            anchors.left: parent.left
+            anchors.leftMargin: 20
+            anchors.verticalCenter: parent.verticalCenter
         }
     }
 
     Flickable {
+        clip: true
+
         anchors {
-            top: headerItem.bottom
+            top: header.bottom
             bottom: parent.bottom
             left: parent.left
             right: parent.right
