@@ -32,6 +32,8 @@ CONFIG += qdeclarative-boostable
 # Add dependency to Symbian components
 # CONFIG += qt-components
 
+LIBS += -lX11 -ldl -lXext
+
 # The .cpp file which was generated for your project. Feel free to hack it.
 SOURCES += main.cpp \
     btconnector.cpp \
