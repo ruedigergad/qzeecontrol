@@ -1,0 +1,26 @@
+Name: qzeecontrol
+Summary: QZeeControl - Control your smartphone remotely.
+Version: 0.4.0
+Release: 1
+Group: Amusements/Games
+License: GPLv3
+URL: http://qzeecontrol.garage.maemo.org/
+Sources:
+    - "%{name}_%{version}.tar.gz"
+Description:  
+ QZeeControl lets you control your N9/N950 with a Zeemote(TM) Bluetooth remote control. QZeeControl is completly written from scratch in Qt/QML. 
+ Zeemote (TM) is a trademark of Zeemote Technology Inc. Other trademarks are property of their respective owners.
+
+PkgConfigBR:
+    - QtCore >= 4.7.0
+    - QtGui
+    - QtConnectivity
+    - qdeclarative-boostable
+    - xi
+    - xtst
+Configure: none
+Builder: qmake 
+Files:
+    - "%{_datadir}/applications/QZeeControl_harmattan.desktop"
+    - "/opt/QZeeControl"
+    - "%{_datadir}/icons/hicolor/80x80/apps/QZeeControl80.png"
