@@ -1,3 +1,12 @@
+exists($$QMAKE_INCDIR_QT"/../applauncherd/MDeclarativeCache"): {
+    MEEGO_VERSION_MAJOR     = 1
+    MEEGO_VERSION_MINOR     = 2
+    MEEGO_VERSION_PATCH     = 0
+    MEEGO_EDITION           = harmattan
+
+    DEFINES += MEEGO_EDITION_HARMATTAN NFC_ENABLED
+}
+
 # Add more folders to ship with the application, here
 folder_01.source = qml/QZeeControl
 folder_01.target = qml
