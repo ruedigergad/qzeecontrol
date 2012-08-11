@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+
+        <title>
+            QZeeControl
+        </title>
+    </head>
+
+    <body>
+
+        <div class="top">
+            <h1>
+              QZeeControl<br /><img src="qzeecontrol.png" alt="QZeeControl Logog" /><br />Control your N9 remotely.
+            </h1>
+        </div>
+
+    <div class="cont">
+       <h2 class="release"> 
+            Current Version: 0.4.0
+      </h2>
+      <h1>
+          Content
+      </h1>
+      <ul>
+        <li><h3><a href="#Description">Description</a></h3></li>
+        <li><h3><a href="#Supported_OS">Supported Operating Systems</a></h3></li>
+        <li><h3><a href="#How-To">How-To</a></h3></li>
+        <li><h3><a href="#License">License</a></h3></li>
+        <li><h3><a href="#Trademarks">Trademarks</a></h3></li>
+        <li><h3><a href="#Contact">Contact</a></h3></li>
+      </ul>
+
+      <br/><hr/><br/>
+
+      <h3>
+            <a name="Description">Description</a>
+      </h3>
+      <p>
+        QZeeControl lets you control your N9/N950 with a Zeemote(TM) Bluetooth remote control.
+        QZeeControl is completly written from scratch in Qt/QML.
+        It is currently available for MeeGo/Harmattan. 
+      </p>
+
+      <br/><hr/><br/>
+
+      <h3>
+            <a name="Supported_OS">Supported Operating Systems</a>
+      </h3>
+      <p>
+      QZeeControl is currently available for MeeGo/Harmattan. 
+      </p>
+
+      <br/><hr/><br/>
+
+      <h3>
+            <a name="How-To">How-To</a>
+      </h3>
+      <p>
+      In order to use your Zeemote(TM) with your smartphone you have to follow three steps.
+      </p>
+      <p>
+      First, you need to pair your Zeemote(TM) with your phone. 
+      In order to do this activate bluetooth via the settings menu and turn your Zeemote(TM) on by long-pressing the button at the top of your Zeemote(TM) that is marked red.
+      Next go to the &quot;Bluetooth devices&quot; sub setting menu.
+      There you should find an entry named &quot;Zeemote(TM) JS1&quot; select it and select to pair it.
+      The code for pairing is 0000.
+      At this stage the remote control is paired but not connected.
+      </p>
+      <p>
+      Once you have paired your remote control with your smartphone you need to discover it using QZeeControl.
+      To do this start up QZeeControl and press the &quot;Scan&quot; button.
+      Note that this may take a while.
+      If the scan was successfull you should see some address in xx:xx:xx:xx:xx:xx format be filled in the field that prior showed just a message and the &quot;Connect&quot; button should have become enabled.
+      Note that these values will be stored and loaded once you open QZeeControl the next time so you usually should not need to scan again except you want to use a different remote control.
+      </p>
+      <p>
+      Finally, in order to start controlling your smartphone you need to actually connect your remote control to the phone.
+      To do so just press the &quot;Connect&quot; button.
+      After a short moment you should see that the connection has been established.
+      At this stage you can test if the remote control actually works by using the built-in test functionality.
+      Try to move your joystick and press some buttons.
+      You should see the red rectangle moving and the letters representing the buttons light-up in red respectively.
+      </p>
+      <p>
+      From there on you can use your Zeemote(TM) remote control to control your phone.
+      Next time you want to use it just enable bluetooth at your phone, enable the Zeemote(TM) remote control, and finally start QZeeControl and connect to the remote control.
+      </p>
+
+      <h3>
+          <a name="License">License</a>
+      </h3>
+      <pre>
+Copyright 2012 Ruediger Gad
+
+QZeeControl is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+QZeeControl is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with QZeeControl.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.
+      </pre>
+
+      <br/><hr/><br/>
+
+      <h3>
+          <a name="Trademarks">Trademarks</a>
+      </h3>
+      <pre>
+Zeemote (TM) is a trademark of Zeemote Technology Inc. Other trademarks are property of their respective owners.
+      </pre> 
+
+      <br/><hr/><br/>
+
+      <h3>
+          <a name="Contact">Contact</a>
+      </h3>
+      <p>
+      Feel free to contact me under the following e-mail address <a href="mailto:r.c.g@gmx.de">r.c.g@gmx.de</a>.
+      </p>
+
+      <p>
+      <a href="http://jigsaw.w3.org/css-validator/"><img style="border:0;width:88px;height:31px" src="vcss-blue.png" alt="Valid CSS!"/></a>
+      <a href="http://validator.w3.org/check?uri=referer"><img src="valid-xhtml10-blue.png" alt="Valid HTML 4.01 Strict" height="31" width="88"/></a>
+      <a href="http://www.vim.org"><img src="vim_created.gif" alt="This site has been created with Vim"/></a>
+      </p>
+
+    </div>
+    </body>
+</html>
+
